@@ -2,25 +2,22 @@
  * @writer:      Tal Aharon
  * @date:        19.03.2023
  * 
- * @description: This header file defines the interface for a sorted list data
- *               structure. A sorted list is a collection of elements sorted
- *               in a specific order according to a user-defined comparison
- *               function. The sorted list provides functions for creating,
- *               manipulating, and querying the list. It is built on top of a
- *               doubly linked list and maintains the sorted order of its
- *               elements.
+ * @description: This header file defines the interface for a sorted list data 
+ * structure. A sorted list is a collection of elements sorted in a specific 
+ * order according to a user-defined comparison function. The sorted list provides 
+ * functions for creating, manipulating, and querying the list. It is built on 
+ * top of a doubly linked list and maintains the sorted order of its elements.
  *
- *               The sorted list allows for efficient insertion, removal, and
- *               retrieval of elements while keeping them sorted. It provides
- *               iterators to traverse the list in order, as well as functions
- *               for merging two sorted lists and searching for specific
- *               elements within a given range.
+ * The sorted list allows for efficient insertion, removal, and retrieval of 
+ * elements while keeping them sorted. It provides iterators to traverse the 
+ * list in order, as well as functions for merging two sorted lists and searching 
+ * for specific elements within a given range.
  *
- *               Users of this header should provide their own comparison
- *               function, which defines the sorting order for the elements.
+ * Users of this header should provide their own comparison function, which defines
+ * the sorting order for the elements.
  *
- *               Detailed function descriptions and usage guidelines can be
- *               found in the comments within this header file.
+ * Detailed function descriptions and usage guidelines can be found in the comments 
+ * within this header file.
  * 
 ******************************************************************************/
 #ifndef __SORTED_LIST_H__
