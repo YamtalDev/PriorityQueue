@@ -43,19 +43,18 @@ sorted_list_t *SortedListCreate(sorted_list_compare_func_t compare)
 	sorted_list_t *sorted_list = (sorted_list_t *)malloc(sizeof(sorted_list_t));
 	if(NULL == sorted_list)
 	{
-		return NULL;
+		return (NULL);
 	}
 
-	sorted_list -> dll = DLLCreate();
-	if(NULL == sorted_list -> dll)
+	sorted_list->dll = DLLCreate();
+	if(NULL == sorted_list->dll)
 	{
 		free(sorted_list);
-		return NULL;
+		return (NULL);
 	}
 
-	sorted_list -> cmp = compare;
-
-	return sorted_list;
+	sorted_list->cmp = compare;
+	return (sorted_list);
 }
 
 /******************************************************************************
@@ -66,8 +65,7 @@ sorted_list_t *SortedListCreate(sorted_list_compare_func_t compare)
 void SortedListDestroy(sorted_list_t *sorted_list)
 {
 	assert(sorted_list && "List isn't valid.");
-
-	DLLDestroy(sorted_list -> dll);
+	DLLDestroy(sorted_list->dll);
 	free(sorted_list);
 }
 
@@ -80,7 +78,7 @@ void SortedListDestroy(sorted_list_t *sorted_list)
 size_t SortedListCount(const sorted_list_t *sorted_list)
 {
 	assert(sorted_list && "List isn't valid.");
-	return DLLCount(sorted_list -> dll);
+	return DLLCount(sorted_list->dll);
 }
 
 /******************************************************************************
@@ -93,14 +91,13 @@ sorted_list_iter_t SortedListBegin(const sorted_list_t *sorted_list)
 {
 	sorted_list_iter_t begin = {NULL};
 	assert(sorted_list && "List isn't valid.");
-
-	begin.iterator = DLLBegin(sorted_list -> dll);
+	begin.iterator = DLLBegin(sorted_list->dll);
 
 	#ifndef NDEBUG
 	begin.list = (sorted_list_t *)sorted_list;
 	#endif
 
-	return begin;
+	return (begin);
 }
 
 /******************************************************************************
@@ -113,14 +110,13 @@ sorted_list_iter_t SortedListEnd(const sorted_list_t *sorted_list)
 {
 	sorted_list_iter_t end = {NULL};
 	assert(sorted_list && "List isn't valid.");
-
-	end.iterator = DLLEnd(sorted_list -> dll);
+	end.iterator = DLLEnd(sorted_list->dll);
 
 	#ifndef NDEBUG
 	end.list = (sorted_list_t *)sorted_list;
 	#endif
 
-	return end;
+	return (end);
 }
 
 /******************************************************************************
@@ -133,8 +129,7 @@ sorted_list_iter_t SortedListNext(const sorted_list_iter_t iterator)
 {
 	assert(iterator.iterator && "Iterator isn't valid.");
 	*(dll_iter_t *)&iterator.iterator = DLLNext(iterator.iterator);
-
-	return iterator;
+	return (iterator);
 }
 
 /******************************************************************************
@@ -147,9 +142,7 @@ sorted_list_iter_t SortedListPrev(const sorted_list_iter_t iterator)
 {
 	assert(iterator.iterator && "Iterator isn't valid.");
 	*(dll_iter_t *)&iterator.iterator = DLLPrev(iterator.iterator);
-
-	return iterator;
-
+	return (iterator);
 }
 
 /******************************************************************************
@@ -161,7 +154,7 @@ sorted_list_iter_t SortedListPrev(const sorted_list_iter_t iterator)
 int SortedListIsEmpty(const sorted_list_t *sorted_list)
 {
 	assert(sorted_list && "List isn't valid.");
-	return DLLIsEmpty(sorted_list -> dll);
+	return DLLIsEmpty(sorted_list->dll);
 }
 
 /******************************************************************************
@@ -175,8 +168,7 @@ int SortedListIsEqual(const sorted_list_iter_t iter1, const sorted_list_iter_t i
 {
 	assert(iter1.iterator && "Iterator isn't valid.");
 	assert(iter2.iterator && "Iterator isn't valid.");
-
-	return iter1.iterator == iter2.iterator;
+	return (iter1.iterator == iter2.iterator);
 }
 
 /******************************************************************************
@@ -196,12 +188,9 @@ sorted_list_iter_t SortedListInsert(sorted_list_t *sorted_list, void *data)
 	sorted_list_iter_t end = {NULL};
 
 	assert(sorted_list && "List isn't valid.");
-
 	end = SortedListEnd(sorted_list);
 	start = SortedListBegin(sorted_list);
-
-	while(start.iterator != end.iterator &&
-	 0 > (sorted_list -> cmp(SortedListGetData(start), data)))
+	while(start.iterator != end.iterator && 0 > (sorted_list->cmp(SortedListGetData(start), data)))
 	{
 		start = SortedListNext(start);
 	}
@@ -211,7 +200,7 @@ sorted_list_iter_t SortedListInsert(sorted_list_t *sorted_list, void *data)
 	start.list = sorted_list;
 	#endif
 
-	return start;
+	return (start);
 }
 
 /******************************************************************************
@@ -226,8 +215,7 @@ sorted_list_iter_t SortedListRemove(sorted_list_iter_t iterator)
 {
 	assert(iterator.iterator && "Iterator isn't valid.");
 	iterator.iterator = DLLRemove(iterator.iterator);
-
-	return iterator;
+	return (iterator);
 }
 
 /******************************************************************************
@@ -239,7 +227,7 @@ sorted_list_iter_t SortedListRemove(sorted_list_iter_t iterator)
 void *SortedListPopBack(sorted_list_t *sorted_list)
 {
 	assert(sorted_list && "List isn't valid.");
-	return DLLPopBack(sorted_list -> dll);
+	return (DLLPopBack(sorted_list->dll));
 }
 
 /******************************************************************************
@@ -251,7 +239,7 @@ void *SortedListPopBack(sorted_list_t *sorted_list)
 void *SortedListPopFront(sorted_list_t *sorted_list)
 {
 	assert(sorted_list && "List isn't valid.");
-	return DLLPopFront(sorted_list -> dll);
+	return (DLLPopFront(sorted_list->dll));
 }
 
 /******************************************************************************
@@ -263,7 +251,7 @@ void *SortedListPopFront(sorted_list_t *sorted_list)
 void *SortedListGetData(const sorted_list_iter_t iterator)
 {
 	assert(iterator.iterator && "Iterator isn't valid.");
-	return DLLGetData(iterator.iterator);
+	return (DLLGetData(iterator.iterator));
 }
 
 /******************************************************************************
@@ -277,40 +265,38 @@ void *SortedListGetData(const sorted_list_iter_t iterator)
 ******************************************************************************/
 void SortedListMerge(sorted_list_t *dest, sorted_list_t *source)
 {
-	dll_iter_t runner = NULL;
-	dll_iter_t from = NULL;
 	dll_iter_t to = NULL;
+	dll_iter_t from = NULL;
+	dll_iter_t runner = NULL;
 
 	assert(dest && "List isn't valid.");
 	assert(source && "List isn't valid.");
 
-	runner = DLLBegin(dest -> dll);
-	from = DLLBegin(source -> dll);
-	to = DLLBegin(source -> dll);
+	to = DLLBegin(source->dll);
+	runner = DLLBegin(dest->dll);
+	from = DLLBegin(source->dll);
 
-	while(from != DLLEnd(source -> dll))
+	while(from != DLLEnd(source->dll))
 	{
-		while(runner != DLLEnd(dest -> dll) &&
-		 0 >= (dest -> cmp(DLLGetData(runner), DLLGetData(from))))
+		while(runner != DLLEnd(dest->dll) && 0 >= (dest->cmp(DLLGetData(runner), DLLGetData(from))))
 		{
 			runner = DLLNext(runner);
 		}
 
-		if(runner == DLLEnd(dest -> dll))
+		if(runner == DLLEnd(dest->dll))
 		{
-			to = DLLEnd(source -> dll);
+			to = DLLEnd(source->dll);
 		}
 		else
 		{
-			while(to != DLLEnd(source -> dll) &&
-			 0 > (dest -> cmp(DLLGetData(to), DLLGetData(runner))))
+			while(to != DLLEnd(source->dll) && 0 > (dest->cmp(DLLGetData(to), DLLGetData(runner))))
 			{
 				to = DLLNext(to);
 			}
 		}
 
 		DLLSplice(runner, from, to);
-		from = DLLBegin(source -> dll);
+		from = DLLBegin(source->dll);
 	}
 }
 
@@ -338,10 +324,10 @@ sorted_list_iter_t SortedListFind(const sorted_list_t *list, const sorted_list_i
 	#endif
 
 	for(; target.iterator !=  to.iterator && 
-	0 < list -> cmp(SortedListGetData(target), parameter);
+	0 < list->cmp(SortedListGetData(target), parameter);
 	target = SortedListNext(target));
 
-	return target;
+	return (target);
 }
 
 /******************************************************************************
@@ -370,11 +356,11 @@ sorted_list_iter_t SortedListFindIf(const sorted_list_iter_t from, const sorted_
 	{
 		if(match(SortedListGetData(runner), parameter))
 		{
-			return runner;
+			return (runner);
 		}
 	}
 
-	return to;
+	return (to);
 }
 
 /******************************************************************************
@@ -400,10 +386,10 @@ int SortedListForEach(sorted_list_iter_t from, const sorted_list_iter_t to, sort
 	#ifndef NDEBUG
 	if(from.list != to.list)
 	{
-		return -1;
+		return (-1);
 	}
 	#endif
 
-	return DLLForEach(from.iterator, to.iterator, action, parameter);
+	return (DLLForEach(from.iterator, to.iterator, action, parameter));
 }
 /*****************************************************************************/
