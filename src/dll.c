@@ -3,9 +3,9 @@
  * @date:        15.03.2023
  
  * @description: This implementation of the doubly linked list in C provides basic 
- *               doubly linked list operations such as insertion, removal, iteration, 
- *               and more. The list can hold various data types, and it supports 
- *               custom actions and comparisons.
+ * doubly linked list operations such as insertion, removal, iteration, 
+ * and more. The list can hold various data types, and it supports 
+ * custom actions and comparisons.
  * 
 ******************************************************************************/
 #include <stdlib.h> /* malloc, free  */
@@ -30,8 +30,8 @@ struct dll
 int Action(void *data, void *param);
 static void DLLSwap(dll_iter_t iter1, dll_iter_t iter2);
 /******************************************************************************
- * @brief     Creates a new doubly linked list.
- * @return    Pointer to the created list, or NULL if creation fails.
+ * @brief  Creates a new doubly linked list.
+ * @return Pointer to the created list, or NULL if creation fails.
 ******************************************************************************/
 dll_t *DLLCreate(void)
 {

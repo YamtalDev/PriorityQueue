@@ -3,22 +3,18 @@
  * @date:        19.03.2023
  *
  * @description: This implementation file contains the actual implementation
- *               of the functions declared in the sorted_list.h header file.
- *               It provides the logic for creating, manipulating, and
- *               querying the sorted list data structure.
+ * of the functions declared in the sorted_list.h header file. It provides the 
+ * logic for creating, manipulating, and querying the sorted list data structure.
  *
- *               The implementation relies on a doubly linked list to maintain
- *               the sorted order of elements. It uses user-defined comparison
- *               functions to determine the order of elements during insertion
- *               and searching operations.
+ * The implementation relies on a doubly linked list to maintain the sorted order 
+ * of elements. It uses user-defined comparison functions to determine the order 
+ * of elements during insertion and searching operations.
  *
- *               Users of this implementation can create sorted lists, insert,
- *               remove, and query elements efficiently while ensuring that
- *               the list remains sorted at all times.
+ * Users of this implementation can create sorted lists, insert, remove, and query 
+ * elements efficiently while ensuring that the list remains sorted at all times.
  *
- *               The code is organized according to the function prototypes
- *               defined in sorted_list.h, and each function is documented
- *               with details about its purpose and usage.
+ * The code is organized according to the function prototypes defined in sorted_list.h, 
+ * and each function is documented with details about its purpose and usage.
  *
  *****************************************************************************/
 #include <assert.h>      /* assert       */
