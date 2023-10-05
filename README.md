@@ -8,18 +8,18 @@ This repository provides a C data structure implementation of a priority queue. 
 
 # Getting Started
 
-### Prerequisites
+## Prerequisites
 
 Before you begin, ensure you have the following prerequisites installed on your system:
 
 ### make: If you don't have `make` installed, you can download and install it from the official website:
+
   - [Download make for windows](https://gnuwin32.sourceforge.net/packages/make.htm)
   - [Download make for Linux and MacOS](https://www.gnu.org/software/make/)
 
 ### Download from the command line:
 
 Linux:
-
 ```shell
 $ sudo apt install make -y
 ```
@@ -35,7 +35,6 @@ $ brew install make
 ### Download from the command line:
 
 Linux:
-
 ```shell
 $ sudo apt update
 $ sudo apt install build-essential
