@@ -6,17 +6,17 @@ This repository contains a C implementation of a priority queue data structure b
 
 This repository provides a C data structure implementation of a priority queue. It includes a set of files that make it easy to build, run, test, and clean the project.
 
-## Getting Started
+# Getting Started
 
 ### Prerequisites
 
 Before you begin, ensure you have the following prerequisites installed on your system:
 
-- **make:** If you don't have make installed, you can download and install it from the official website:
+### make: If you don't have `make` installed, you can download and install it from the official website:
   - [Download make for windows](https://gnuwin32.sourceforge.net/packages/make.htm)
-  - [make for Linux and MacOS](https://www.gnu.org/software/make/)
+  - [Download make for Linux and MacOS](https://www.gnu.org/software/make/)
 
-- **Download from the command line:**
+### Download from the command line:
 
 Linux:
 
@@ -29,10 +29,10 @@ MacOS:
 $ brew install make
 ```
 
-- **gcc Compiler:** If you don't have gcc installed, you can download and install it from the official website:
+### gcc Compiler: If you don't have gcc installed, you can download and install it from the official website:
   - [Download gcc](https://gcc.gnu.org/install/)
 
-- **Download from the command line:**
+### Download from the command line:
 
 Linux:
 
