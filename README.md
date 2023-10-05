@@ -4,19 +4,70 @@ This repository contains a C implementation of a priority queue data structure b
 
 ## Overview
 
-
 This repository provides a C data structure implementation of a priority queue. It includes a set of files that make it easy to build, run, test, and clean the project.
 
 ## Getting Started
 
-If you'd like to use the Priority Queue implementation from this repository, follow these simple steps:
+### Prerequisites
+
+Before you begin, ensure you have the following prerequisites installed on your system:
+
+- **make:** If you don't have make installed, you can download and install it from the official website:
+  - [Download make for windows](https://gnuwin32.sourceforge.net/packages/make.htm)
+  - [make for Linux and MacOS](https://www.gnu.org/software/make/)
+
+- **Download from the command line:**
+
+Linux:
 
 ```shell
+$ sudo apt install make -y
+```
 
+MacOS:
+```shell
+$ brew install make
+```
+
+- **gcc Compiler:** If you don't have gcc installed, you can download and install it from the official website:
+  - [Download gcc](https://gcc.gnu.org/install/)
+
+- **Download from the command line:**
+
+Linux:
+
+```shell
+$ sudo apt update
+$ sudo apt install build-essential
+```
+
+MacOS:
+```shell
+$ brew install gcc
+```
+
+Windows:
+```shell
+pacman -Syu
+pacman -S mingw-w64-x86_64-gcc
+gcc --version
+```
+
+## Installation
+
+1. **Clone or Download the Repository:**
+   You can clone this Git repository or download it as a ZIP file to your local machine.
+
+``` shell
 $ git clone https://github.com/YamtalDev/PriorityQueue.git
 $ cd PriorityQueue/test/priority_queue
-$ make run
+```
+2. **Compile and run the Project:**
+Use make to compile the project:
 
+``` shell
+$ make
+$ make run
 ```
 
 ## Project structure:
@@ -78,7 +129,6 @@ with each project in this repository.
 
 ## License:
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 
 ## Contact
 
