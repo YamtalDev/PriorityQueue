@@ -1,7 +1,7 @@
 #ifndef __PRIORITY_QUEUE_H__
 #define __PRIORITY_QUEUE_H__
 
-#include <stddef.h> /*size_t */
+#include <stddef.h> /*size_t, NULL */
 
 typedef struct priority_queue priority_queue_t;
 

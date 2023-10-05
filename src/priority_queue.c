@@ -1,13 +1,11 @@
 /******************************************************************************
-    writer: Tal Aharon
-
-    reviewer: Yotam Itzhaki
-
-    date : 30.03.2023
-
+ * @writer:      Tal Aharon
+ * @date:        30.03.2023
+ 
+ * @description: 
+ * 
 ******************************************************************************/
 #include <stdlib.h>           /* malloc, free */
-#include <stddef.h>           /* size_t, NULL */
 #include <assert.h>           /* assert       */
 
 #include "priority_queue.h"   /* Internal use */
